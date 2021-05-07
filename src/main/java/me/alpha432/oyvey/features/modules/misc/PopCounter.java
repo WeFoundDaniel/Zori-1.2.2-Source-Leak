@@ -17,7 +17,7 @@ public class PopCounter extends Module {
         setInstance();
     }
 
-    public final Setting<String> clientname = register(new Setting<Object>("Name", "onpoint.ie"));
+    public final Setting<String> clientname = register(new Setting<Object>("Name", "danware"));
 
     public static PopCounter getInstance() {
         if (INSTANCE == null) {
@@ -40,9 +40,9 @@ public class PopCounter extends Module {
             int l_Count = TotemPopContainer.get(player.getName());
             TotemPopContainer.remove(player.getName());
             if (l_Count == 1) {
-                Command.sendSilentMessage(ChatFormatting.RED + player.getName() + " died after popping " + ChatFormatting.GRAY + l_Count + ChatFormatting.RED + ChatFormatting.RED + " totem, thanks to " + clientname.getValueAsString());
+                Command.sendSilentMessage(ChatFormatting.RED + player.getName() + " died after popping " + ChatFormatting.GRAY + l_Count + ChatFormatting.RED + ChatFormatting.RED + " totems "
             } else {
-                Command.sendSilentMessage(ChatFormatting.RED + player.getName() + " died after popping " + ChatFormatting.GRAY + l_Count + ChatFormatting.RED + ChatFormatting.RED + " totems, " + "thanks to " + clientname.getValueAsString());
+                Command.sendSilentMessage(ChatFormatting.RED + player.getName() + " died after popping " + ChatFormatting.GRAY + l_Count + ChatFormatting.RED + ChatFormatting.RED + " totems " 
             }
         }
     }
@@ -62,9 +62,8 @@ public class PopCounter extends Module {
             TotemPopContainer.put(player.getName(), l_Count);
         }
         if (l_Count == 1) {
-            Command.sendSilentMessage(ChatFormatting.RED + player.getName() + " popped " + ChatFormatting.GRAY + l_Count + ChatFormatting.RED + " totem, " + ChatFormatting.RED + "thanks to " + clientname.getValueAsString());
-        } else {
-            Command.sendSilentMessage(ChatFormatting.RED + player.getName() + " popped " + ChatFormatting.GRAY + l_Count + ChatFormatting.RED + " totems, " + ChatFormatting.RED + "thanks to " + clientname.getValueAsString());
+            Command.sendSilentMessage(ChatFormatting.RED + player.getName() + " popped " + ChatFormatting.GRAY + l_Count + ChatFormatting.RED + " totems "
+            Command.sendSilentMessage(ChatFormatting.RED + player.getName() + " popped " + ChatFormatting.GRAY + l_Count + ChatFormatting.RED + " totems "
         }
     }
 }
